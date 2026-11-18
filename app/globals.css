@@ -60,6 +60,18 @@ body {
   font-size: clamp(4rem, 13vw, 14rem);
 }
 
+/* Hero legibility over bright photos: a black edge keeps mint text from
+   drowning in bright ice/water. A real stroke for giant display type;
+   a soft halo for small mono text, where a stroke would muddy glyphs. */
+.hero-display-outline {
+  -webkit-text-stroke: 2px #000;
+}
+.hero-text-halo {
+  text-shadow:
+    0 1px 6px rgba(0, 0, 0, 0.65),
+    0 0 2px rgba(0, 0, 0, 0.55);
+}
+
 .text-display-section {
   /* 44px floor: long single words (AVAILABILITY) must fit a 390px phone
      in Bebas without clipping the right edge. */

@@ -226,11 +226,11 @@ export default function HomePage() {
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 px-5 pb-10 text-highlighter-mint md:px-10 md:pb-12">
+        <div className="absolute inset-x-0 bottom-0 px-5 pb-10 text-highlighter-mint hero-text-halo md:px-10 md:pb-12">
           <p className="text-[12px] leading-[1.2] uppercase">
             {site.base} — {site.lake}
           </p>
-          <h1 className="display text-display-hero mt-4 uppercase">
+          <h1 className="display text-display-hero hero-display-outline mt-4 uppercase">
             <span className="block whitespace-nowrap">Wild Simcoe</span>
             <span className="block whitespace-nowrap">Outfitters</span>
           </h1>
