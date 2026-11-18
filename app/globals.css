@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+/*
+ * San Rita style guide, adapted: "alpine field guide on sage paper".
+ * - Display: condensed Bebas Neue, line-height 0.90, Highlighter Mint.
+ * - Everything else: JetBrains Mono, tight tracking, caps for UI/labels.
+ * - Times serif ONLY for inline links.
+ * - 0px radius, no shadows, 1px outlined buttons, full-bleed bands.
+ */
+
+@theme {
+  --color-highlighter-mint: #e2ffcc;
+  --color-sage-stone: #84907f;
+  --color-carbon-ink: #161b13;
+  --color-forest-charcoal: #2d3329;
+  --color-topo-gray: #dde2e4;
+  --color-pure-black: #000000;
+
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
+    monospace;
+
+  --spacing-67: 67px;
+  --spacing-70: 70px;
+  --spacing-190: 190px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-topo-gray);
+  color: var(--color-forest-charcoal);
+  font-family: var(--font-mono);
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-highlighter-mint);
+  color: var(--color-carbon-ink);
+}
+
+/* Display type: clamp() keeps the massive headlines inside the viewport
+   on mobile. Never set display type below 40px (style guide rule). */
+.display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.text-display-hero {
+  font-size: clamp(4.75rem, 16.5vw, 21rem);
+}
+
+.text-display-section {
+  font-size: clamp(3.75rem, 11vw, 11rem);
+}
+
+.text-display-activity {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+}
+
+.text-display-small {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+/* Serif accent: inline links ONLY (style guide rule). */
+.serif-link {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: none;
+}
+
+/* 1px outlined button. The border IS the affordance: no fill, no radius. */
+.btn-outline {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  background: transparent;
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.btn-outline-mint {
+  color: var(--color-highlighter-mint);
+}
+.btn-outline-mint:hover {
+  background: var(--color-highlighter-mint);
+  color: var(--color-carbon-ink);
+}
+
+.btn-outline-dark {
+  color: var(--color-forest-charcoal);
+}
+.btn-outline-dark:hover {
+  background: var(--color-forest-charcoal);
+  color: var(--color-topo-gray);
+}
+
+.btn-outline-ink {
+  color: var(--color-carbon-ink);
+}
+.btn-outline-ink:hover {
+  background: var(--color-carbon-ink);
+  color: var(--color-highlighter-mint);
+}
+
+/* Small bordered tag, e.g. COMING SOON. Not a link. */
+.tag-outline {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  padding: 5px 12px;
+  font-size: 10px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
