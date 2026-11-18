@@ -42,20 +42,14 @@ const EXPERIENCES: Activity[] = [
     blurb:
       "Private skills days built around you: fire, shelter, navigation, and staying calm when plans change.",
   },
-  {
-    image: IMG.fallsCard,
-    name: "Waterfall Day Trips",
-    blurb:
-      "Guided day hikes to Ontario's best falls — an easy escape from the city, no experience needed.",
-  },
 ];
 
 const HUNTS: Activity[] = [
   {
     image: IMG.duckCard,
-    name: "Duck Hunting — Boat & Field",
+    name: "Waterfowl Hunting — Boat & Field",
     blurb:
-      "Layout boats on open water and field hunts over decoys, on private land and Simcoe-area waters.",
+      "Ducks and geese: layout boats on open water and field hunts over decoys, on private land and Simcoe-area waters.",
   },
   {
     image: IMG.deerCard,
@@ -189,8 +183,8 @@ const TRUST_ITEMS = [
 const SEASONS: Array<[string, string]> = [
   ["Winter", "Ice fishing + private tours"],
   ["Spring", "Black bear + survival training"],
-  ["Summer", "Backcountry camping + waterfalls"],
-  ["Fall", "Duck + deer + black bear"],
+  ["Summer", "Backcountry camping + survival training"],
+  ["Fall", "Waterfowl + deer + black bear"],
 ];
 
 const STEPS: Array<[string, string, string]> = [

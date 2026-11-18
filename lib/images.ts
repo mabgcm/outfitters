@@ -46,10 +46,6 @@ export const IMG = {
     src: "https://images.pexels.com/photos/30663377/pexels-photo-30663377/free-photo-of-campfire-burning-in-forest-setting.jpeg?auto=compress&cs=tinysrgb&w=1200",
     alt: "Campfire burning in a forest setting",
   },
-  fallsCard: {
-    src: "https://images.pexels.com/photos/33015839/pexels-photo-33015839/free-photo-of-serene-twin-waterfalls-in-lush-forest-setting.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    alt: "Twin waterfalls cascading in a lush forest",
-  },
   clusterSnowmobile: {
     src: "https://images.pexels.com/photos/31761193/pexels-photo-31761193/free-photo-of-winter-scene-in-chevery-with-snowmobile.jpeg?auto=compress&cs=tinysrgb&w=900",
     alt: "Snowmobile by a frozen lake in a winter landscape",

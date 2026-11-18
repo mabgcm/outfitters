@@ -5,7 +5,7 @@
 
 Private, small-group outdoor trips based in Barrie, Ontario, on Lake Simcoe:
 ice fishing, private ice fishing tours, backcountry camping, survival
-training, waterfall day trips, duck hunting (boat & field), white-tailed
+training, waterfowl hunting (boat & field), white-tailed
 deer, and black bear.
 
 Built with Next.js (App Router) + TypeScript + Tailwind CSS v4. Design
@@ -16,9 +16,9 @@ clusters, full-bleed alternating bands).
 
 ## Pages in v1
 
-- `/` — Homepage: sells the company. All 8 activities appear as headings,
+- `/` — Homepage: sells the company. All 7 activities appear as headings,
   grouped into two doors (Experiences / Hunts). ONLY Ice Fishing links to a
-  real page; the other 7 show a "Coming soon" tag and no link.
+  real page; the other 6 show a "Coming soon" tag and no link.
 - `/ice-fishing` — Full landing-page template future activity pages copy:
   hero, who it's for, included/not included, licence box, sample day,
   season + logistics, safety + cancellation, photo cluster, FAQ, CTA.
@@ -88,9 +88,9 @@ unreviewed.
     none were invented.
 11. **Photos** — all Pexels stock. Replace with real trip photos
     (`lib/images.ts` + `public/images/CREDITS.md`).
-12. **Other 7 landing pages** — not built yet: Private Ice Fishing Tours,
-    Backcountry Camping, Survival Training, Waterfall Day Trips,
-    Duck Hunting, White-Tailed Deer, Black Bear. Copy
+12. **Other 6 landing pages** — not built yet: Private Ice Fishing Tours,
+    Backcountry Camping, Survival Training, Waterfowl Hunting
+    (Boat & Field), White-Tailed Deer, Black Bear. Copy
     `app/ice-fishing/page.tsx` as the template.
 
 ## Deploy
