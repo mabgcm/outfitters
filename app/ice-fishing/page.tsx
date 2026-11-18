@@ -234,7 +234,7 @@ export default function IceFishingPage() {
               key={time}
               className="flex items-baseline gap-6 border-t border-forest-charcoal/25 py-4 last:border-b md:gap-12"
             >
-              <dt className="display w-20 shrink-0 text-[40px] leading-[0.9]">
+              <dt className="display shrink-0 text-[40px] leading-[0.9] whitespace-nowrap">
                 {time}
               </dt>
               <dd className="text-[16px] leading-[1.4]">{what}</dd>

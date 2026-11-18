@@ -61,7 +61,9 @@ body {
 }
 
 .text-display-section {
-  font-size: clamp(3.75rem, 11vw, 11rem);
+  /* 44px floor: long single words (AVAILABILITY) must fit a 390px phone
+     in Bebas without clipping the right edge. */
+  font-size: clamp(2.75rem, 11vw, 11rem);
 }
 
 .text-display-activity {
