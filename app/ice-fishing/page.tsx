@@ -99,7 +99,7 @@ export default function IceFishingPage() {
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 text-highlighter-mint md:px-10 md:pb-12">

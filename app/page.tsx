@@ -223,7 +223,7 @@ export default function HomePage() {
           className="absolute inset-0 h-full w-full object-cover"
         />
         {/* Legibility scrims, top (nav) and bottom (headline). */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/60 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 to-transparent" />
 
         <div className="absolute inset-x-0 bottom-0 px-5 pb-10 text-highlighter-mint md:px-10 md:pb-12">
@@ -231,9 +231,8 @@ export default function HomePage() {
             {site.base} — {site.lake}
           </p>
           <h1 className="display text-display-hero mt-4 uppercase">
-            Wild Simcoe
-            <br />
-            Outfitters
+            <span className="block whitespace-nowrap">Wild Simcoe</span>
+            <span className="block whitespace-nowrap">Outfitters</span>
           </h1>
           <p className="mt-4 max-w-[46ch] text-[16px] leading-[1.4]">
             {site.tagline} Private, guided days on the ice, in the field, and

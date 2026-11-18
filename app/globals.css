@@ -16,8 +16,12 @@
   --color-topo-gray: #dde2e4;
   --color-pure-black: #000000;
 
-  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo,
+  /* Literal family names (NOT var(--font-...) chains): next/font emits
+     @font-face rules under these names, and a var() chain through a
+     runtime-defined variable breaks inside Tailwind v4's @theme, which
+     silently fell back to the system sans on the live site. */
+  --font-display: "Bebas Neue", "Arial Narrow", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
     monospace;
 
   --spacing-67: 67px;
@@ -53,7 +57,7 @@ body {
 }
 
 .text-display-hero {
-  font-size: clamp(4.75rem, 16.5vw, 21rem);
+  font-size: clamp(4rem, 13vw, 14rem);
 }
 
 .text-display-section {
@@ -94,6 +98,13 @@ body {
   text-decoration: none;
   cursor: pointer;
   transition: background-color 120ms ease, color 120ms ease;
+}
+
+/* Compact variant for the top bar, so the wordmark + CTA fit one row
+   on narrow phones. */
+.btn-outline-sm {
+  padding: 8px 12px;
+  font-size: 10px;
 }
 
 .btn-outline-mint {
