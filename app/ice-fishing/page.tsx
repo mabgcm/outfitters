@@ -1,5 +1,12 @@
-import type { Metadata } from "next";
+import Image from "next/image";
+import JsonLd from "@/components/JsonLd";
 import { IMG } from "@/lib/images";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  pageMetadata,
+  touristTripSchema,
+} from "@/lib/seo";
 import { contactMailto, site } from "@/lib/site";
 
 /**
@@ -11,10 +18,12 @@ import { contactMailto, site } from "@/lib/site";
  * copy Matt will verify. See README.md ("Placeholders Matt must replace").
  */
 
-export const metadata: Metadata = {
-  title: `Ice Fishing — ${site.brandName}`,
+export const metadata = pageMetadata({
+  title: "Ice Fishing",
   description: `Private, guided ice fishing days on ${site.lake} from ${site.base}. Heated huts, all gear included, Toronto pickup. Season ${site.iceSeason.toLowerCase()}.`,
-};
+  path: "/ice-fishing",
+  image: IMG.iceHero,
+});
 
 const WHO = [
   [
@@ -91,13 +100,29 @@ const FAQS: Array<[string, string]> = [
 export default function IceFishingPage() {
   return (
     <>
+      <JsonLd
+        data={[
+          touristTripSchema({
+            name: "Private Guided Ice Fishing on Lake Simcoe",
+            description: `Private, guided ice fishing days on ${site.lake} from ${site.base}. Heated huts, all gear included, Toronto pickup. Season ${site.iceSeason.toLowerCase()}.`,
+            path: "/ice-fishing",
+          }),
+          faqSchema(FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Ice Fishing", path: "/ice-fishing" },
+          ]),
+        ]}
+      />
       {/* HERO */}
       <section className="relative h-[92svh] min-h-[520px] overflow-hidden bg-carbon-ink">
-        <img
+        <Image
           src={IMG.iceHero.src}
           alt={IMG.iceHero.alt}
-          fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/55 to-transparent" />
@@ -155,12 +180,15 @@ export default function IceFishingPage() {
             </div>
           ))}
         </div>
-        <img
-          src={IMG.iceSup4.src}
-          alt={IMG.iceSup4.alt}
-          loading="lazy"
-          className="mt-12 aspect-[16/9] w-full object-cover md:aspect-[21/9]"
-        />
+        <div className="relative mt-12 aspect-[16/9] w-full md:aspect-[21/9]">
+          <Image
+            src={IMG.iceSup4.src}
+            alt={IMG.iceSup4.alt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
       </section>
 
       {/* INCLUDED / NOT INCLUDED */}
@@ -319,24 +347,33 @@ export default function IceFishingPage() {
       {/* PHOTO CLUSTER — tilted, on a light band with dark gaps. */}
       <section className="overflow-hidden bg-topo-gray px-5 py-[67px] md:px-10 md:py-[70px]">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-center">
-          <img
-            src={IMG.iceSup1.src}
-            alt={IMG.iceSup1.alt}
-            loading="lazy"
-            className="w-full max-w-[360px] rotate-[-8deg] object-cover"
-          />
-          <img
-            src={IMG.iceSup2.src}
-            alt={IMG.iceSup2.alt}
-            loading="lazy"
-            className="w-full max-w-[300px] rotate-[12deg] self-end object-cover md:-ml-10 md:self-auto"
-          />
-          <img
-            src={IMG.iceSup3.src}
-            alt={IMG.iceSup3.alt}
-            loading="lazy"
-            className="w-full max-w-[340px] rotate-[4deg] object-cover md:-ml-10"
-          />
+          <div className="relative aspect-[4/3] w-full max-w-[360px] rotate-[-8deg]">
+            <Image
+              src={IMG.iceSup1.src}
+              alt={IMG.iceSup1.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 360px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] w-full max-w-[300px] rotate-[12deg] self-end md:-ml-10 md:self-auto">
+            <Image
+              src={IMG.iceSup2.src}
+              alt={IMG.iceSup2.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 300px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] w-full max-w-[340px] rotate-[4deg] md:-ml-10">
+            <Image
+              src={IMG.iceSup3.src}
+              alt={IMG.iceSup3.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 340px"
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 

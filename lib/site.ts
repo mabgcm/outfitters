@@ -19,6 +19,10 @@ export const site = {
   lake: "Lake Simcoe",
   driveTime: "About 70 minutes north of Toronto",
 
+  // Live site URL — metadataBase, canonical base, and sitemap base.
+  // Change to the real domain when it is registered.
+  url: "https://outfitters-ten.vercel.app",
+
   // PLACEHOLDER — fake contact details. 555 numbers are fictional by design.
   email: "hello@wildsimcoeoutfitters.com",
   phone: "+1 (705) 555-0100",

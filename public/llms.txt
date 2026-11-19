@@ -1,0 +1,17 @@
+# Wild Simcoe Outfitters (working name)
+
+Private, small-group guided outdoor trips based in Barrie, Ontario, on Lake Simcoe — about 70 minutes north of Toronto.
+
+## Trips
+- Ice Fishing — private guided days on Lake Simcoe, heated huts, all gear included. Season: mid-January to mid-March.
+- Private Ice Fishing Tours — private day on the ice with pickup from Toronto.
+- Waterfowl Hunting (Boat & Field) — ducks and geese, layout boats on open water and field hunts over decoys.
+- White-Tailed Deer — stand and still hunts on private land.
+- Black Bear — spring and fall hunts over established bait sites.
+- Backcountry Camping — overnight canoe trips staged from Barrie.
+- Survival Training — private, customised skills days.
+
+## Notes
+- All trips are private: your group only, never mixed with strangers.
+- Hunting trips are for licensed hunters only; licences and eligibility are checked before booking.
+- Contact details, prices and policies are being finalised — see https://outfitters-ten.vercel.app for the latest.

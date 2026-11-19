@@ -23,6 +23,20 @@ clusters, full-bleed alternating bands).
   hero, who it's for, included/not included, licence box, sample day,
   season + logistics, safety + cancellation, photo cluster, FAQ, CTA.
 
+## SEO / GEO foundation
+
+- `lib/seo.ts` — single source: `ROUTES` (sitemap source), `pageMetadata()`
+  (title/description/canonical/OG/Twitter), and JSON-LD builders.
+- `app/sitemap.ts` / `app/robots.ts` — generated; a new landing page joins
+  the sitemap by adding one line to `ROUTES`.
+- `components/JsonLd.tsx` — renders schema. Layout carries LocalBusiness +
+  WebSite; activity pages add TouristTrip + FAQPage + BreadcrumbList.
+- `public/llms.txt` — plain-text business summary for AI crawlers.
+- Images use `next/image` (remote Pexels URLs via `remotePatterns` in
+  `next.config.ts`).
+- Contact details and prices are deliberately left OUT of structured data
+  until the real ones are confirmed (see lib/seo.ts).
+
 ## Run it locally
 
 ```bash

@@ -1,6 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { IMG, type SiteImage } from "@/lib/images";
+import { pageMetadata } from "@/lib/seo";
 import { contactMailto, site } from "@/lib/site";
+
+export const metadata = pageMetadata({
+  title: "Private wilderness, an hour from Toronto",
+  description: `Private, small-group outdoor trips based in ${site.base} on ${site.lake}: ice fishing, private ice fishing tours, backcountry camping, survival training, and waterfowl, deer, and black bear hunts. ${site.driveTime}.`,
+  path: "/",
+  image: IMG.heroHome,
+});
 
 /* ------------------------------------------------------------------ */
 /* Activity entries                                                    */
@@ -84,12 +93,15 @@ function ActivityEntry({
       }`}
     >
       <div className={`md:col-span-5 ${flip ? "md:order-2" : ""}`}>
-        <img
-          src={activity.image.src}
-          alt={activity.image.alt}
-          loading="lazy"
-          className="aspect-[4/3] w-full object-cover"
-        />
+        <div className="relative aspect-[4/3] w-full">
+          <Image
+            src={activity.image.src}
+            alt={activity.image.alt}
+            fill
+            sizes="(max-width: 768px) 100vw, 40vw"
+            className="object-cover"
+          />
+        </div>
       </div>
       <div
         className={`flex flex-col justify-between gap-6 md:col-span-7 ${
@@ -210,11 +222,13 @@ export default function HomePage() {
     <>
       {/* HERO — full-bleed photo, massive display headline overlapping it. */}
       <section className="relative h-[100svh] min-h-[560px] overflow-hidden bg-carbon-ink">
-        <img
+        <Image
           src={IMG.heroHome.src}
           alt={IMG.heroHome.alt}
-          fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Legibility scrims, top (nav) and bottom (headline). */}
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-black/70 to-transparent" />
@@ -335,24 +349,33 @@ export default function HomePage() {
       {/* FOUR SEASONS — tilted photo cluster on a dark band. */}
       <section className="overflow-hidden bg-carbon-ink px-5 py-[67px] text-highlighter-mint md:px-10 md:py-[70px]">
         <div className="relative flex flex-col gap-8 md:h-[420px] md:flex-row md:items-start">
-          <img
-            src={IMG.clusterSnowmobile.src}
-            alt={IMG.clusterSnowmobile.alt}
-            loading="lazy"
-            className="w-full max-w-[360px] rotate-[-8deg] object-cover md:absolute md:top-0 md:left-0 md:w-[320px]"
-          />
-          <img
-            src={IMG.clusterTent.src}
-            alt={IMG.clusterTent.alt}
-            loading="lazy"
-            className="w-full max-w-[300px] rotate-[12deg] self-end object-cover md:absolute md:top-16 md:left-[260px] md:w-[280px] md:self-auto"
-          />
-          <img
-            src={IMG.clusterLake.src}
-            alt={IMG.clusterLake.alt}
-            loading="lazy"
-            className="w-full max-w-[320px] rotate-[4deg] object-cover md:absolute md:top-4 md:left-[500px] md:w-[300px]"
-          />
+          <div className="relative aspect-[4/3] w-full max-w-[360px] rotate-[-8deg] md:absolute md:top-0 md:left-0 md:w-[320px]">
+            <Image
+              src={IMG.clusterSnowmobile.src}
+              alt={IMG.clusterSnowmobile.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 320px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] w-full max-w-[300px] rotate-[12deg] self-end md:absolute md:top-16 md:left-[260px] md:w-[280px] md:self-auto">
+            <Image
+              src={IMG.clusterTent.src}
+              alt={IMG.clusterTent.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 280px"
+              className="object-cover"
+            />
+          </div>
+          <div className="relative aspect-[4/3] w-full max-w-[320px] rotate-[4deg] md:absolute md:top-4 md:left-[500px] md:w-[300px]">
+            <Image
+              src={IMG.clusterLake.src}
+              alt={IMG.clusterLake.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 300px"
+              className="object-cover"
+            />
+          </div>
           {/* Circular icon badge, style-guide marker. */}
           <span
             aria-hidden="true"
@@ -423,12 +446,15 @@ export default function HomePage() {
       <section className="bg-carbon-ink px-5 py-[67px] text-highlighter-mint md:px-10 md:py-[70px]">
         <div className="grid items-start gap-10 md:grid-cols-12">
           <div className="md:col-span-6">
-            <img
-              src={IMG.guideBand.src}
-              alt={IMG.guideBand.alt}
-              loading="lazy"
-              className="aspect-[16/9] w-full object-cover"
-            />
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src={IMG.guideBand.src}
+                alt={IMG.guideBand.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <div className="md:col-span-6">
             <p className="text-[12px] leading-[1.2] uppercase">The guides</p>
